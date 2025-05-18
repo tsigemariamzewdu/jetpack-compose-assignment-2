@@ -23,7 +23,9 @@ fun NavGraph() {
             route = "detail/{todoId}",
             arguments = listOf(navArgument("todoId") { type = NavType.IntType })
         ) { backStackEntry ->
-            TodoDetailScreen()
+            TodoDetailScreen(
+                onBackClick = { navController.popBackStack() },
+            )
         }
     }
 }
